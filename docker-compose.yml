@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  hive1:
+    image: hive
+    ports:
+      - 5001:3000
+    networks:
+      - hives
+    volumes:
+      - .:/hive
+
+  hive2:
+      image: hive
+      ports:
+        - 5002:3000
+      networks:
+        - hives
+      volumes:
+        - .:/hive
+
+  hive3:
+      image: hive
+      ports:
+        - 5003:3000
+      networks:
+        - hives
+      volumes:
+        - .:/hive
+
+networks: 
+  hives:
+    driver: bridge
